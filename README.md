@@ -1,125 +1,201 @@
-# Guia comandos Github
+# 📘 Guía básica de Git y GitHub
 
-### Verificar que Git esté instalado:
+Aprende a usar Git desde cero con ejemplos simples, comandos esenciales y soluciones a errores comunes.
 
-git --version
+---
 
+## 🚀 Subir tu primer proyecto a GitHub (paso a paso)
 
-### Configurar nombre y correo (una vez por computadora):
+### 1️⃣ Inicializa el repositorio
 
-git config --global user.name "TuNombre"
-git config --global user.email "tu@email.com
-"
-
-
-### Opcional: que Git recuerde tu token:
-
-git config --global credential.helper store
-
-
-### Crear una carpeta y entrar en ella:
-
-mkdir ~/Documentos/MiProyecto
-cd ~/Documentos/MiProyecto
-
-
-### Crear un archivo, por ejemplo README.md:
-
-nvim README.md # o nano, vim, code, lo que uses
-
-
-### Inicializar Git en la carpeta:
-
+```
 git init
+```
 
+### 2️⃣ Agrega los archivos
 
-### Verificar el estado del repositorio:
-
-git status
-
-
-### Agregar todos los archivos al staging:
-
+```
 git add .
+```
 
+### 3️⃣ Guarda los cambios
 
-### Agregar un archivo específico:
+```
+git commit -m "Primer commit"
+```
 
-git add README.md
+### 4️⃣ Conecta con GitHub
 
+```
+git remote add origin URL_DE_TU_REPOSITORIO
+```
 
-### Hacer un commit con mensaje:
+### 5️⃣ Sube tu proyecto
 
-git commit -m "Primer commit: agrego README"
-
-
-### Agregar un remoto (GitHub):
-
-git remote add origin https://github.com/TuUsuario/TuRepo.git
-
-
-### Verificar remoto:
-
-git remote -v
-
-
-### Subir cambios por primera vez:
-
+```
 git push -u origin main
+```
 
+---
 
-### Para los siguientes commits:
+## 📂 Comandos básicos
 
-git add .
-git commit -m "Mensaje descriptivo"
-git push
+### 🔍 Ver estado del proyecto
 
-
-### Traer cambios del remoto:
-
-git pull origin main
-
-
-### Traer cambios sin fusionarlos automáticamente:
-
-git fetch origin
-git log HEAD..origin/main --oneline
-
-
-### Ver estado e historial:
-
+```
 git status
-git log
+```
+
+Muestra los archivos modificados y los que están listos para guardar.
+
+---
+
+### ➕ Agregar archivos
+
+```
+git add .
+git add archivo.txt
+```
+
+Prepara los archivos antes de hacer commit.
+
+---
+
+### 💾 Guardar cambios
+
+```
+git commit -m "Mensaje"
+```
+
+Guarda una versión del proyecto.
+
+---
+
+### ☁️ Subir cambios
+
+```
+git push origin main
+```
+
+Sube tus cambios a GitHub.
+
+---
+
+### 📥 Descargar repositorio
+
+```
+git clone URL
+```
+
+Copia un repositorio a tu computadora.
+
+---
+
+### 🔄 Actualizar proyecto
+
+```
+git pull origin main
+```
+
+Descarga cambios nuevos del repositorio.
+
+---
+
+## 🌿 Manejo de ramas
+
+### Crear una rama
+
+```
+git branch nombre-rama
+```
+
+### Cambiar de rama
+
+```
+git checkout nombre-rama
+```
+
+### Unir ramas
+
+```
+git merge nombre-rama
+```
+
+---
+
+## ❌ Errores comunes y soluciones
+
+### error: failed to push
+
+```
+git pull origin main --rebase
+```
+
+Solución: primero debes actualizar tu repositorio antes de subir cambios.
+
+---
+
+### error: repository not found
+
+Verifica:
+
+* URL correcta del repositorio
+* Que tienes acceso
+
+---
+
+### cambios no guardados al cambiar de rama
+
+```
+git stash
+```
+
+Guarda cambios temporalmente.
+
+---
+
+## 💡 Tips útiles
+
+### Ver historial resumido
+
+```
 git log --oneline
-git diff
+```
 
+### Deshacer cambios en un archivo
 
-### Trabajar con ramas:
+```
+git restore archivo.txt
+```
 
-git branch nombre_rama # crear rama
-git checkout nombre_rama # cambiar de rama
-git push -u origin nombre_rama # subir rama al remoto
-git checkout main
-git merge nombre_rama # combinar ramas
+### Ver ramas
 
+```
+git branch
+```
 
-### Subir archivos o carpetas específicos:
+---
 
-git add archivo.md
-git commit -m "Agrego archivo específico"
-git push
+## 🧠 Conceptos clave
 
-git add carpeta/
-git commit -m "Agrego carpeta con contenido"
-git push
+* **Git**: sistema de control de versiones
+* **GitHub**: plataforma para almacenar y compartir código
+* **Commit**: guardado de cambios
+* **Push**: subir cambios
+* **Pull**: descargar cambios
 
+---
 
-### Consejos prácticos:
-- Haz commits pequeños y descriptivos.
-- Organiza tus archivos en carpetas.
-- Siempre haz `git pull` antes de `git push` si trabajas en repositorios compartidos.
-- No compartas tu token en repos privados.
+## 🎯 Objetivo
 
-### Resumen de flujo básico:
-- Crear carpeta → git init → crear archivos → git add → git commit → git remote add origin → git push
-- Cambios futuros: git add → git commit → git push → git pull
+Esta guía está hecha para:
+
+* Principiantes en Git
+* Personas que quieren un resumen rápido
+* Tener comandos esenciales en un solo lugar
+
+---
+
+## ⭐ Si te sirve
+
+Dale una estrella al repositorio y compártelo 🙌
