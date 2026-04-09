@@ -26,26 +26,28 @@ git pull
 Sigue esto exactamente 👇
 
 ```bash
-# 0. Crear carpeta del proyecto
+# Crear carpeta del proyecto
 mkdir mi-proyecto
 cd mi-proyecto
 
-# 1. Inicializar repositorio
+# Inicializar repositorio
 git init
 
-# 2. Crear README.md
-echo "# Mi primer proyecto" > README.md
+# Crear README vacío
+touch README.md
+
+# Primer commit
 git add README.md
 git commit -m "Agregando README inicial"
 
-# 3. Agregar otros archivos
+# Agregar otros archivos y commit
 git add .
 git commit -m "Primer commit con archivos"
 
-# 4. Conectar repositorio remoto
+# Conectar con GitHub
 git remote add origin URL_DE_TU_REPO
 
-# 5. Subir a GitHub
+# Subir a GitHub
 git push -u origin main
 ```
 
